@@ -10,6 +10,8 @@
 		- [clamAV website](http://www.clamav.net/downloads) 
 	- Scan file/files for virus by using clamAV 
 
+## Architecture:
+![alt text](https://github.com/RamuRChenchaiah/virus-scanner-nodejs/blob/master/Architecture-virus-scanner-nodejs-calmAV.PNG "virus-scanner-node-clamAV")
 
 ## Installation/Usage
 - Install the pre-requisites as above
