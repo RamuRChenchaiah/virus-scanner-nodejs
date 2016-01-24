@@ -7,7 +7,7 @@
 - npm
 - Install clamAV server in your machine 
 	- More details at: 
-		- ![alt text](http://www.clamav.net/downloads "clamAV Downloads") 
+		- [clamAV website](http://www.clamav.net/downloads) 
 	- Scan file/files for virus by using clamAV 
 
 
