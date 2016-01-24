@@ -3,7 +3,7 @@ var clam = require('clamscan')({
     quarantine_infected: '~/infected/', // Move file here. remove_infected must be FALSE, though. 
     scan_recursively: true, // Choosing false here will save some CPU cycles 
     scan_log: '/var/log/node-clam', // You're a detail-oriented security professional. 
-    debug_mode: true // This will put some debug info in your js console 
+    debug_mode: true, // This will put some debug info in your js console 
     file_list: '/home/webuser/scan_files.txt', // path to file containing list of files to scan 
     clamscan: {
         path: '/usr/bin/clam', // I dunno, maybe your clamscan is just call "clam" 
