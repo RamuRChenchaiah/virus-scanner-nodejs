@@ -23,17 +23,24 @@ var clam = require('clamscan')({
     preference: 'clamscan'    
 });
 
-// scans a test file from the location: /var/picture/
-clam.is_infected('/var/picture/for_example.jpg', function(err, file, is_infected) {
-    if(err) {
-        logger.error(err);
-        return false;
-    } 
-    if(is_infected) {
-		logger.info("File is infected!");
-        res.send({msg: "File is infected!"});
-    } else {
-		logger.info("File is clean!");
-        res.send({msg: "File is clean!"});
-    }
-});
+
+var quickScan= function(req, res){
+    // scans a test file from the location: /var/picture/
+
+    // Todo: Replace below file location with yours, dynamically like reg.file or req.file.files[0]  or that suites your input
+    clam.is_infected('/var/picture/for_example.jpg', function(err, file, is_infected) {
+        if(err) {
+            logger.error(err);
+            return false;
+        } 
+        if(is_infected) {
+    		logger.info("File is infected!");
+            res.send({msg: "File is infected!"});
+        } else {
+    		logger.info("File is clean!");
+            res.send({msg: "File is clean!"});
+        }
+    });
+}
+
+exports.quickScan = quickScan

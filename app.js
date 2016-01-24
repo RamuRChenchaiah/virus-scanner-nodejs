@@ -58,6 +58,5 @@ app.use(function(err, req, res, next) {
   });
 });
 
-require('./util/scan')
 
 module.exports = app;
