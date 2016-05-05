@@ -1,13 +1,13 @@
-var logger = require('winston')
+const logger = require('winston')
 
-var scanFiles = function(req, res){
-    var scan_status = {
+let scanFiles = (req, res) => {
+    let scan_status = {
         good: 0,
         bad: 0
     };
-    var files = req.files;
+    let files = req.files;
     if(files.length >= 1){
-        clam.scan_files(files, function(err, good_files, bad_files) {
+        clam.scan_files(files, (err, good_files, bad_files) => {
             if(!err) {
                 if(bad_files.length > 0) {
                     res.send({
@@ -21,7 +21,7 @@ var scanFiles = function(req, res){
             } else {
                 // Do some error handling 
             }
-        }, function(err, file, is_infected) {
+        }, (err, file, is_infected) => {
             if(is_infected) {
                 scan_status.bad++;
             } else {
@@ -35,4 +35,4 @@ var scanFiles = function(req, res){
 
 }
 
-exports.scanFiles = scanFiles
+exports.scanFiles = scanFiles;

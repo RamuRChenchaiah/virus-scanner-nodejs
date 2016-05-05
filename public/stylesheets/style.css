@@ -3,6 +3,17 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+a:link{
+color:#00B7FF;
+text-decoration: none;
+}
+
+a:hover{
+color:blue;
+text-decoration: underline;
+}
+
+a:active{
+color:orange;
+text-decoration: underline;
 }
