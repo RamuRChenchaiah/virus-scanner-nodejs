@@ -1,6 +1,6 @@
-var logger = require('winston')
+const logger = require('winston')
 
-var clam = require('clamscan')({
+const clam = require('clamscan')({
     remove_infected: true, // Removes files if they are infected 
     quarantine_infected: '~/infected/', // Move file here. remove_infected must be FALSE, though. 
     scan_recursively: true, // Choosing false here will save some CPU cycles 
@@ -24,11 +24,11 @@ var clam = require('clamscan')({
 });
 
 
-var quickScan= function(req, res){
+let quickScan=(req, res)=>{
     // scans a test file from the location: /var/picture/
 
     // Todo: Replace below file location with yours, dynamically like reg.file or req.file.files[0]  or that suites your input
-    clam.is_infected('/var/picture/for_example.jpg', function(err, file, is_infected) {
+    clam.is_infected('/var/picture/for_example.jpg', (err, file, is_infected)=>{
         if(err) {
             logger.error(err);
             return false;
@@ -43,4 +43,4 @@ var quickScan= function(req, res){
     });
 }
 
-exports.quickScan = quickScan
+exports.quickScan = quickScan;
